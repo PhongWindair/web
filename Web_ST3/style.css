@@ -1,0 +1,280 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #dba1b5;
+    z-index: 1000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.icons span {
+    margin-left: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 80px 0;
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+
+}
+.slides-container {
+    display: flex;
+    width: 300%; /* Gấp 3 lần số lượng slide (nếu có 3 slide) */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 1 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    gap: 80px
+}
+
+.text {
+    max-width: 400px;
+}
+
+.text h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #dba1b5;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.image img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #dba1b5;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.shop-title {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.categories, .products {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-header, .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.items {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+.items div {
+    background: #fff;
+    padding: 15px;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Đảm bảo tất cả hình ảnh trong sản phẩm và danh mục có kích thước đồng nhất */
+.category-item img, .product-item img {
+    width: 200px; /* Chiều rộng cố định cho tất cả hình ảnh */
+    height: 200px; /* Chiều cao cố định cho tất cả hình ảnh */
+    object-fit: cover; /* Cắt hoặc thu phóng hình ảnh để phù hợp với kích thước khung mà không bị méo */
+    border-radius: 8px; /* Tùy chọn: bo tròn góc nếu muốn */
+    margin-bottom: 10px; /* Khoảng cách giữa hình ảnh và văn bản bên dưới */
+}
+
+/* Điều chỉnh các phần tử danh mục và sản phẩm để đồng đều */
+.category-item, .product-item {
+    text-align: center; /* Canh giữa nội dung bên dưới hình ảnh */
+    margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
+    flex: 0 0 200px; /* Đảm bảo các phần tử có kích thước cố định 200px và không co giãn */
+}
+
+/* Đảm bảo các phần tử trong .items có chiều rộng đồng đều */
+.categories .items, .products .items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; /* Không cho phần tử xuống hàng */
+    overflow-x: auto; /* Kích hoạt thanh cuộn ngang khi cần thiết */
+    padding-bottom: 10px; /* Khoảng cách dưới cùng để thanh cuộn không bị che khuất */
+}
+
+/* Đảm bảo thanh cuộn ngang chỉ xuất hiện khi cần */
+.categories .items::-webkit-scrollbar, .products .items::-webkit-scrollbar {
+    height: 8px; /* Chiều cao của thanh cuộn ngang */
+}
+
+.categories .items::-webkit-scrollbar-thumb, .products .items::-webkit-scrollbar-thumb {
+    background-color: #dba1b5; /* Màu của thanh cuộn */
+    border-radius: 10px; /* Bo tròn góc của thanh cuộn */
+}
+
+/* Phần footer */
+footer {
+    background-color: #dba1b5; /* Sử dụng màu giống với header */
+    color: black;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-container .quick-links,
+.footer-container .follow-us {
+    text-align: left;
+    width: 200px;
+}
+
+.footer-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-container ul li {
+    margin-bottom: 10px;
+}
+
+.footer-container ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-container ul li a:hover {
+    color: black; /* Giữ màu chữ trắng khi hover */
+}
+
+.copyright {
+    background-color: white; /* Sử dụng màu giống với footer */
+    padding: 10px;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 14px;
+    color: green;
+    font-weight: bold;
+}
+
+.about-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.about-content img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.about-text {
+    text-align: left;
+    max-width: 500px;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.5;
+}
